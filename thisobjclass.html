@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	<script type="text/javascript">
+
+		obj = {
+			name: "Harsh",
+			ret: function(){
+				console.log(name);
+				console.log(this.name);
+			}
+		}
+		obj.ret();
+
+		function per(name,age){
+			this.n = name;
+			this.a = age;
+		}
+		per.prototype.height = 10;
+		
+		let o1 = new per("Harsh",20);
+		let o2 = new per("Neha",27);
+		console.log(o1);
+		console.log(o2);
+
+		let defobj = new Object();
+		defobj.name = "Harshdef";
+		defobj.age = 30;
+		console.log(defobj);		
+	</script>
+
+</body>
+</html>

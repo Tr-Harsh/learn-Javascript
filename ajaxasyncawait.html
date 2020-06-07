@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	<button id="b1">Fetch</button>
+	<div id="d1"></div>
+	<input type="text" id="i1">
+
+	<script>
+	async function get(){
+		return new Promise((res,rej)=>{
+			setTimeout(()=>{
+				res("FULFILLED")
+			},3000)
+		})
+	}
+	
+	get().then(data=>{
+		console.log(data)
+	}) 
+
+	async function disp(){
+		var temp = await get();
+		console.log(temp)
+	}
+
+	disp()
+	</script>
+
+	<script>
+		document.getElementById('b1').onclick = async ()=>{
+		let val = document.getElementById('i1').value	
+
+		var data = await fetch(`http://api.openweathermap.org/data/2.5/weather?q=${val}&units=metric&appid=3e6d4886db6317ad1602555049aa1b99`)
+
+		var data2 = await data.json()
+		
+		console.log(data2.name)
+		console.log(data2.main.temp)
+		console.log(data2.weather[0].description)
+
+		document.getElementById('d1').innerHTML=`
+		<ul>
+			<li>City: ${data2.name}</li>
+			<li>Temp: ${data2.main.temp}</li>
+			<li>Desc: ${data2.weather[0].description}</li>
+		</ul>		
+		`
+	}
+	</script>
+
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	<script type="text/javascript">
+		
+		let arr= [1,2,3,4];
+		let str = "Harsh"
+		console.log(arr);
+		console.log(...arr);
+		console.log(...str);
+		
+		let arr2 = [...arr]
+		console.log(arr2);
+
+		function sum(a,b){
+			console.log(a+b);
+		}
+		sum(...arr);
+
+		let arr3 = [...arr,...arr2]
+		console.log(arr3);
+
+		let obj = {
+			x: "prop1",
+			y: "prop2"
+		}
+		let ob2 = {...obj};
+		console.log(obj,ob2);
+	</script>
+
+</body>
+</html>

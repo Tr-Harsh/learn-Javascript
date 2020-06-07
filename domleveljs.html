@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	<h1 id="i1"></h1>
+	<h1 id="i2">Hello from 2</h1>>
+<script type="text/javascript">
+	let x = document.getElementById('i1')
+	console.log(x);
+	x.innerHTML = "Hello from 1 <br>";
+
+	arr = [
+		{name: "Harsh",age: 20},
+		{name: "Shakti", age: 18},
+		{name: "Neha", age: 27}
+	]
+	let j=0;
+	arr.forEach((i)=>{
+		console.log(`My name is ${i.name} and age is ${i.age}`);
+	})
+
+	var fun1 = (arg)=>{
+		arg+=" and add this";
+		console.log(arg);
+	}
+	fun1("Print this argument");
+</script>
+</body>
+</html>

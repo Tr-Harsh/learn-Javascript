@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+    <body>
+        <h1>
+            Javascript
+        </h1>
+        <script>
+            function add(c=10){
+            	let a=2,b=4;
+           		return a+b+c
+            }
+            console.log(add());
+			console.log(add(6));	            
+
+            function ret(name,age){
+            	console.log(`my name is ${name} and age is ${age}`);
+            }
+            ret("Harsh",20);
+
+            let items = ['1','2','3','4'];
+            let arr = []
+            items.forEach(function(i){
+            	arr.push(i);
+            });
+			console.log(arr);
+
+			var a = function(){
+				console.log('Varibale assigned function');
+			}
+			a()
+
+			var b = ()=>{
+				console.log('Variable assigned function without function keyword');
+			}
+			b()
+        </script>
+    </body>
+</html>

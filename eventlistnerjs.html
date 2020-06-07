@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	<h2 id="i1">This text should change</h2>
+	<h2 id='i2'>Change</h2>
+	<input id="t1" type="text">
+	<button id="b1">Click</button>
+	<h3 id='i3' class='c3'>This is H3</h3>
+
+<script type="text/javascript">
+	var x = document.getElementById('i1');
+	var x1 = document.getElementById('i2');
+	var inp = document.getElementById('t1');
+	var but = document.getElementById('b1');
+
+	console.log(x.innerHTML);
+	console.log(inp.innerHTML);
+	console.log(but.innerHTML);
+
+	/*
+	but.onclick = ()=>{
+		x.innerHTML=inp.value;
+	}
+	*/
+
+	but.addEventListener('click',()=>{
+		alert("Event added")
+	})
+
+	x.onmouseover = ()=>{
+		x.style.backgroundColor="red";
+	}
+	x.onmouseout = ()=>{
+		x.style.backgroundColor="blue";	
+	}
+	inp.onkeyup = ()=>{
+		x.style.backgroundColor="green";
+		x1.innerHTML += inp.value;
+	}
+
+	// let no = parseInt(prompt("Enter a number",""));
+	// no+=10;
+	// console.log(no);
+
+	//queryselector - returns first selected tag,class,id
+
+	let q = document.querySelector('h3[class="c3"]');
+	q.innerHTML += " This is added using queryselector";
+
+	// to get all selected tags/class/id use queryselectorall
+</script>
+</body>
+</html>

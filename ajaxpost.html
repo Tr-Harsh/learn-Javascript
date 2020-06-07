@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+
+	<button id="b1">POST</button>
+
+	<script>
+		
+		var data = {
+			name: "Harsh",
+			status: "Married"
+		}
+
+		document.getElementById('b1').onclick = ()=>{
+			const url = 'http://localhost:5000/sent-data';
+			fetch(url,{
+
+				method: 'post',
+				body: JSON.stringify(data),
+				headers: {
+					'Content-Type': 'application/json'
+				}
+				
+			}).then(res=>res.json()).then(res2 => console.log(res2));	
+		}
+		
+
+	</script>
+
+</body>
+</html>

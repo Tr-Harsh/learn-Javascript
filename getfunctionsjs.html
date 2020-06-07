@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	<h2 id="i1">Hello from id</h2>
+	<h2 class="c1">Hello from class</h2>
+	<h2 name="n1">Hello from Name</h2>
+	<script type="text/javascript">
+		//return array
+		let x = document.getElementsByClassName('c1');
+		console.log(x);
+
+		x[0].innerHTML+=' added this';
+
+		x = document.getElementsByName('n1');
+		x[0].innerHTML+=' added this'
+
+		x = document.getElementsByTagName('h2');
+		for(i=0;i<x.length;i++)
+			x[i].innerHTML+=' ..added this all the h2 tags';
+	</script>
+</body>
+</html>
